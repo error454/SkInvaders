@@ -9,7 +9,7 @@ This project is MIT licensed, if you make a cool clone I'd like to see it!
 * SkookumScript Plugin from the UE4 Marketplace
 
 # Architecture
-![Component Overview](https://raw.githubusercontent.com/error454/SkInvaders/master/Doc/class chart.png)
+![Component Overview](https://raw.githubusercontent.com/error454/SkInvaders/master/Doc/class%20chart.png)
 
 ## Components
 ### GunComponent
@@ -112,7 +112,7 @@ Does all of the heavy lifting for calculating game coordinates:
 
 Shield, invasion class along with shield count and shield start location are all parameterized. Run the `TEST_WorldBounds` map and eject to see bounds and helpers drawn out. You can probably guess what most of these are.
 
-![World Setup](https://raw.githubusercontent.com/error454/SkInvaders/master/Doc/world setup.jpg)
+![World Setup](https://raw.githubusercontent.com/error454/SkInvaders/master/Doc/world%20setup.jpg)
 
 ### GM_Invaders
 The GameMode that defines the player controller `PC_Invaders` and the default pawn `BP_PlayerPawn`. This is also where the logic for starting, running and restarting the game is found (see `_invaders_game`).
