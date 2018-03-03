@@ -1,0 +1,16 @@
+()
+[
+  branch
+  [
+    @box._on_component_begin_overlap_do
+    [
+      if other_actor.class_of?(BP_Powerup)
+      [
+        !p : other_actor<>BP_Powerup
+        p.@powerup_sound.play
+        @gun_component.@gun_params := p.@powerup_params
+        p.destroy_sk_actor
+      ]
+    ]
+  ]
+]

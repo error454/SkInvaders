@@ -1,0 +1,7 @@
+()
+[
+  @game_coord_shields.do
+  [
+    BP_Shield.spawn_at_xform(Transform!translation(item))
+  ]
+]

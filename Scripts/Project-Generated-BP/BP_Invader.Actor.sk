@@ -1,0 +1,24 @@
+// BP Invader
+//
+// UE4 name of this class: BP_Invader_C
+
+// UE4 Asset Name: BP_Invader
+// UE4 Package Name: "/Game/Blueprints/Actors/Invaders/BP_Invader"
+
+annotations: &reflected_data &name("BP_Invader_C")
+
+$$ @
+
+/* &raw("UberGraphFrame")       PointerToUberGraphFrame      !@uber_graph_frame       // Currently unsupported */
+&raw("InvaderInstancedMesh") InstancedStaticMeshComponent !@invader_instanced_mesh // Invader Instanced Mesh
+&raw("GunComponent")         GunComponent                 !@gun_component          // Gun Component
+&raw("HealthComponent")      HealthComponent              !@health_component       // Health Component
+&raw("PatternSpawner")       PatternSpawner               !@pattern_spawner        // Pattern Spawner
+&raw("Box")                  BoxComponent                 !@box                    // Box
+&raw("DefaultSceneRoot")     SceneComponent               !@default_scene_root     // Default Scene Root
+&raw("Pattern")              E_Pattern                    !@pattern                // Pattern
+&raw("CenterIndex")          Integer                      !@center_index           // Center Index
+&raw("InvaderScale")         Real                         !@invader_scale          // The amount to scale the object used in the pattern
+&raw("ShootDelay")           Vector2                      !@shoot_delay            // Shoot Delay
+
+$$ .

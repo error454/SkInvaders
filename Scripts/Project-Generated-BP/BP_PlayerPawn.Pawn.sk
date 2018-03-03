@@ -1,0 +1,20 @@
+// BP Player Pawn
+//
+// UE4 name of this class: BP_PlayerPawn_C
+
+// UE4 Asset Name: BP_PlayerPawn
+// UE4 Package Name: "/Game/Blueprints/Actors/Player/BP_PlayerPawn"
+
+annotations: &reflected_data &name("BP_PlayerPawn_C")
+
+$$ @
+
+/* &raw("UberGraphFrame")      PointerToUberGraphFrame      !@uber_graph_frame      // Currently unsupported */
+&raw("GunComponent")        GunComponent                 !@gun_component         // Gun Component
+&raw("Box")                 BoxComponent                 !@box                   // Box
+&raw("InstancedStaticMesh") InstancedStaticMeshComponent !@instanced_static_mesh // Instanced Static Mesh
+&raw("PatternSpawner")      PatternSpawner               !@pattern_spawner       // Pattern Spawner
+&raw("HealthComponent")     HealthComponent              !@health_component      // Health Component
+&raw("MovementRate")        Real                         !@movement_rate         // How fast we move
+
+$$ .

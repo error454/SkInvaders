@@ -1,0 +1,9 @@
+&blueprint
+()
+[
+  // Subscribe our destroy method to the health component's death event
+  @health_component.death_subscribe(^[destroy])
+    
+  // Ideally you'd call this in the construction script, but Sk bug prevents it right now.
+  spawn_invader
+]

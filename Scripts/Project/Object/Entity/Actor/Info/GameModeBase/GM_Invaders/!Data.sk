@@ -1,0 +1,5 @@
+// Reference to the world setup actor
+BP_WorldSetup !@world_setup
+
+// How many invasions have been spawned? Used to set difficulty
+Integer !@invasion_count

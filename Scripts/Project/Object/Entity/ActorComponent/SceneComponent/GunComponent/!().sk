@@ -1,0 +1,4 @@
+()
+[
+  @current_projectiles : List{BP_Projectile}!
+]

@@ -1,0 +1,16 @@
+()
+[
+  !dest : actor_location
+  actor_location_set(@fly_in_location)
+  actor_hidden_in_game_set(false)
+  
+  // fly to the current location from the specified location
+  loop
+  [
+    !new : MathLib.vinterp_to_constant(actor_location, dest, GameLib.world_delta_seconds, 400)
+    actor_location_set(new)
+    [exit] when new.equal?(dest)
+    _wait
+  ]
+  @start_location_reached? := true
+]

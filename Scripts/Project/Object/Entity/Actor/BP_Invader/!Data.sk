@@ -1,0 +1,5 @@
+// Where to fly in from
+Vector3 !@fly_in_location
+
+// True when the invader has reached her start location
+Boolean !@start_location_reached?

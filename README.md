@@ -2,7 +2,11 @@ This is a Space Invaders clone made using [SkookumScript](http://www.skookumscri
 
 This project doesn't have much for visuals, if you're here to learn how to make things look Unreal then you are in the wrong place. However, if you've come to learn SkookumScript then welcome friend!
 
-This project is MIT licensed, if you make a cool clone I'd like to see it!
+# Known Issues
+There are currently 3 known issues. These issues have been reported but need to be worked around for now.
+1. Trying to access a struct in a packaged game or running from editor as Standalone will crash. This prevents the game from running in a packaged build or as standalone since structs are used in many areas of the game.
+2. Compiling the `GunComponent` blueprint will crash the editor. The only way to make changes to this blueprint is to save the blueprint and then restart the editor.
+3. When the first invader is destroyed in editor you will get the error `UObject has no embedded instance`. Ignore this and continue.
 
 # Requirements
 * UE4 4.18

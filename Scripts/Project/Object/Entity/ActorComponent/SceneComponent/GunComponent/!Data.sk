@@ -1,0 +1,2 @@
+// Keeps track of the projectiles that this gun fires so that we can limit # of projectiles at a time
+List{BP_Projectile} !@current_projectiles

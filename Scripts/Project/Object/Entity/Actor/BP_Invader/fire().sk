@@ -1,0 +1,7 @@
+()
+[
+  if @gun_component.valid?
+  [
+    @gun_component.fire
+  ]
+]
