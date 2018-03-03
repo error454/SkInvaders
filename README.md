@@ -8,6 +8,8 @@ There are currently 3 known issues. These issues have been reported but need to 
 2. Compiling the `GunComponent` blueprint will crash the editor. The only way to make changes to this blueprint is to save the blueprint and then restart the editor.
 3. When the first invader is destroyed in editor you will get the error `UObject has no embedded instance`. Ignore this and continue.
 
+If you would like to discuss aspects of the project feel free to reach out in the [official announcement thread](http://forum.skookumscript.com/t/skookum-invaders/1587?u=error454). If you've like to report a bug you can use the github Issue Tracker.
+
 # Requirements
 * UE4 4.18
 * SkookumScript Plugin from the UE4 Marketplace
