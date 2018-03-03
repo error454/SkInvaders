@@ -2,7 +2,7 @@ This is a Space Invaders clone made using [SkookumScript](http://www.skookumscri
 
 This project doesn't have much for visuals, if you're here to learn how to make things look Unreal then you are in the wrong place. However, if you've come to learn SkookumScript then welcome friend!
 
-![Game Preview](https://media.giphy.com/media/AFoRcJJGwwE0UT2kmm/giphy.gif)
+[Animated Game Preview](https://media.giphy.com/media/AFoRcJJGwwE0UT2kmm/giphy.gif)
 
 # Known Issues
 There are currently 3 known issues. These issues have been reported but need to be worked around for now.
