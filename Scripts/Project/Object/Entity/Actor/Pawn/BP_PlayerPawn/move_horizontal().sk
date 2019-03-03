@@ -13,5 +13,12 @@
       @world_setup.@movement_boundary.@y)
       
     actor_location_set(new_loc)
+    @thruster_left.active_set(axis > 0)
+    @thruster_right.active_set(axis < 0)
+  ]
+  else
+  [
+    @thruster_left.active_set(false)
+    @thruster_right.active_set(false)
   ]
 ]

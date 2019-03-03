@@ -11,8 +11,6 @@ $$ @
 
 /* &raw("UberGraphFrame")       PointerToUberGraphFrame !@uber_graph_frame       // Currently unsupported */
 &raw("DefaultSceneRoot")     SceneComponent !@default_scene_root     // Default Scene Root
-&raw("LevelWinSound")        SoundCue       !@level_win_sound        // Level Win Sound
-&raw("LevelLoseSound")       SoundCue       !@level_lose_sound       // Level Lose Sound
 &raw("BackgroundColors")     List{Color}    !@background_colors      // Background Colors
 &raw("BackgroundCycleSpeed") Real           !@background_cycle_speed // Background Cycle Speed
 

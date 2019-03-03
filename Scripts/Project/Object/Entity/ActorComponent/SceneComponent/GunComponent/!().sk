@@ -1,4 +1,5 @@
 ()
 [
   @current_projectiles : List{BP_Projectile}!
+  @fire_event : List{()}!
 ]

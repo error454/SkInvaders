@@ -16,6 +16,7 @@ E_Pattern !@@enemy_2
 E_Pattern !@@enemy_3
 E_Pattern !@@player
 E_Pattern !@@powerup
+E_Pattern !@@none
 E_Pattern !@@e_max
 
 $$ @@!
@@ -32,7 +33,8 @@ $$ @@!
   @@enemy_3: E_Pattern!int(4)
   @@player:  E_Pattern!int(5)
   @@powerup: E_Pattern!int(6)
-  @@e_max:   E_Pattern!int(7)
+  @@none:    E_Pattern!int(7)
+  @@e_max:   E_Pattern!int(8)
   ]
 
 $$ .

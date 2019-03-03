@@ -1,4 +1,0 @@
-(Vector3 loc)
-[
-  @fly_in_location := loc
-]

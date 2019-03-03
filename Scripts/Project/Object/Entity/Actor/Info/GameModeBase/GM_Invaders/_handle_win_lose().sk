@@ -15,11 +15,16 @@
       
       // Unpossess pawn if he's alive
       pc.un_possess when pc.@pawn.valid?
-  
+      
+      // Make sure that the pawn doesn't continue to fire his gun like a sore loser
+      BP_PlayerPawn.instances%firing_intent_set(false)
+
+       // destroy the core
+      @core._destroy_core when @core.valid?
+        
       // Show game over screen
       pc.show_game_over(true)
         
-      @level_lose_sound._play
       game_ended? := true
     ]
     // We've only lost a life
@@ -34,8 +39,6 @@
     @invasion_count++
     // We won
     BP_Invasion.instances%destroy_sk_actor
-    
-    @level_win_sound._play
             
     // spawn another invasion and set difficulty
     !invasion : @world_setup.spawn_invasion

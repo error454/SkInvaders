@@ -16,7 +16,7 @@
         !instigator : Controller!null
         if owner.valid? and owner.@instigator.valid? and owner.@instigator.@controller.valid?
         [
-          instigator := owner.@instigator.@controller
+          instigator : owner.@instigator.@controller
         ]
         GameLib.apply_point_damage(other_actor, @damage, hit_dir, hit, instigator, owner)
         

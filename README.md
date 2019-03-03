@@ -1,20 +1,12 @@
-This is a Space Invaders clone made using [SkookumScript](http://www.skookumscript.com/) and Unreal Engine 4. The goal of this project is to provide a fully working sample project that illustrates how to write a basic game in UE4 using the SkookumScript programming language. 
+This is a Space Invaders clone made using [SkookumScript](http://www.skookumscript.com/) and Unreal Engine 4. The goal of this project is to provide a fully working sample project that illustrates how to write a basic game in UE4 using the SkookumScript programming language.
 
-This project doesn't have much for visuals, if you're here to learn how to make things look Unreal then you are in the wrong place. However, if you've come to learn SkookumScript then welcome friend!
-
-[Animated Game Preview](https://media.giphy.com/media/AFoRcJJGwwE0UT2kmm/giphy.gif)
-
-# Known Issues
-There are currently 3 known issues. These issues have been reported but need to be worked around for now.
-1. Trying to access a struct in a packaged game or running from editor as Standalone will crash. This prevents the game from running in a packaged build or as standalone since structs are used in many areas of the game.
-2. Compiling the `GunComponent` blueprint will crash the editor. The only way to make changes to this blueprint is to save the blueprint and then restart the editor.
-3. When the first invader is destroyed in editor you will get the error `UObject has no embedded instance`. Ignore this and continue.
+[![Animated Game Preview](https://raw.githubusercontent.com/error454/SkInvaders/master/Doc/vimeo.jpg)](https://vimeo.com/320640930 "Skookum Invaders - Click to Watch!")
 
 If you would like to discuss aspects of the project feel free to reach out in the [official announcement thread](http://forum.skookumscript.com/t/skookum-invaders/1587?u=error454). If you'd like to report a bug you can use the github Issue Tracker.
 
 # Requirements
-* UE4 4.18
-* SkookumScript Plugin from the UE4 Marketplace
+* UE4 4.21
+* SkookumScript Plugin [from github](https://github.com/AgogLabs/SkookumScript-UnrealEngine)
 
 # Architecture
 ![Component Overview](https://raw.githubusercontent.com/error454/SkInvaders/master/Doc/class%20chart.png)
@@ -33,9 +25,9 @@ All of the gun parameters are defined in the struct `S_GunParams` with the idea 
 ### HealthComponent
 * Tracks current health/max health
 * Automatically registers damage handling routines
-* Spawns damage and death particles 
+* Spawns damage and death particles
 * Plays death audio cue.
-* Provides death callback to broadcast when its owner has expired. 
+* Provides death callback to broadcast when its owner has expired.
 
 Also squirreled away here is the number of points that something is worth when destroyed.
 
@@ -47,8 +39,8 @@ Can also be used for things that travel in a straight line like `BP_Saucer` and 
 
 ### PatternSpawner
 * Provides ability to spawn a group of actors from an ASCII defined pattern of 0's and 1's
-* Can spawn individual actors like in the case of `BP_Shield` which spawns `BP_ShieldBlock` to create the destroyable shields. Or `BP_Invasion` which spawns groups of `BP_Invader`.
-* Can add instanced static mesh instances to create a pattern as you can see in `BP_Invader` and `BP_PlayerPawn`
+* Can spawn individual actors like in the case of `BP_Shield` which spawns `BP_ShieldBlockNew` to create the destroyable shields. Or `BP_Invasion` which spawns groups of `BP_Invader`
+* Can use instanced static mesh instances to create the pattern.
 
 Patterns are enumerated in `E_Pattern` and defined in the SkookumScript method `Pattern.pattern`. Spawned patterns can be centered about an arbitrary index, for instance in the powerup pattern below, it would be ideal to center it on index 7 so that the pattern will be geometrically centered at the location it is spawned at:
 
@@ -62,17 +54,17 @@ Patterns are enumerated in `E_Pattern` and defined in the SkookumScript method `
 
 ### BP_Invasion
 The coordinator for a group of invaders. The invasion spawns the invaders, groups them together and then moves them down the playfield. It also coordinates:
-* Firing amongst the remaining invaders 
+* Firing amongst the remaining invaders
 * Difficulty adjustment based on how many invaders are remaining and what level you're on
 * Spawning saucers
 * Determining if invaders have landed
 
-The main entry point here is `_invasion`. 
+The main entry point here is `_invasion`.
 
 The actual invasion start/stop is controlled by `GM_Invaders`.
 
 ### BP_Invader
-The bad guys. They pretty much just stand around and fire once in awhile. They also take damage and die, they are basically puppets controlled by `BP_Invasion`. There are also sub-classes `BP_InvaderType1-3` which are just different spawn patterns.
+The bad guys. They pretty much just stand around and fire once in awhile. They also take damage and die, they are basically puppets controlled by `BP_Invasion`. There are also sub-classes `BP_InvaderType1-3` which just change the color of the invader body and point light.
 
 ### BP_Saucer
 * Fly's to the right until it reaches its despawn destination
@@ -83,11 +75,11 @@ The bad guys. They pretty much just stand around and fire once in awhile. They a
 * Overlaps `BP_PlayerPawn` who overrides the `S_GunParams` in her `GunComponent`.
 
 ### BP_Shield
-* Spawns `BP_ShieldBlock`
+* Spawns `BP_ShieldBlockNew`
 * Parameterizes shield class, pattern and scale
 
-### BP_ShieldBlock
-One of the simplest classes in the game. Spawned in a pattern to form a shield that blocks projectiles.
+### BP_ShieldBlockNew
+Each individual shield is made up of an array of these things. They have some cool functionality that makes them connect to adjacent neighbors with their connector arms, see `connect_neighbors`. They also generate a spline on startup that is used to fly them in rapidly past the camera, see `begin_play`.
 * Takes damage thanks to HealthComponent
 * Also takes damage when overlapped by `BP_Invader`
 
@@ -103,9 +95,14 @@ There is 1 subclass `BP_EnemyProjectile` whose 2 key differences are:
 * A different collision profile on the sphere component
 
 ### BP_PlayerPawn
-The player pawn. 
+The player pawn.
 * Handles overlaps with `BP_Powerup`
 * Handles input and logic for moving and shooting
+
+### BP_Satellite
+The satellites sitting in the background. These have lasers built in that can fire into the playfield. When the player picks up a powerup, the satellites will track to the `Sat Start` helper defined in `BP_WorldSetup`, fire their lasers and then sweep to `Sat End`. The actual firing happens in `PC_Invaders.fire_sats`, this was a somewhat arbitrary location to place this. Primarily I didn't want it tied to the player pawn so that if a player is killed, the satellites continue firing.
+
+These are pretty cool models that are rigged to allow rotation and pitch control. There are default implementations to aim the base `_aim_at` and the tip `_aim_tip_at` and then another one that combines those two to look at a specific point in the world `_look_at`.
 
 ## Game Logic & Helpers
 ### BP_WorldSetup
@@ -116,7 +113,7 @@ Does all of the heavy lifting for calculating game coordinates:
 * Saucer spawn/despawn
 * Game Over line
 * Invasion spawn point
-* Shield spawn points 
+* Shield spawn points
 
 Shield, invasion class along with shield count and shield start location are all parameterized. Run the `TEST_WorldBounds` map and eject to see bounds and helpers drawn out. You can probably guess what most of these are.
 
@@ -128,11 +125,12 @@ The GameMode that defines the player controller `PC_Invaders` and the default pa
 This class is where the majority of the stage direction takes place.
 
 ### PC_Invaders
-The player controller. 
+The player controller.
 * Is the primary entry point for everything UI related
 * Handles input for the start UI
 * Tracks number of player lives
 * Tracks player score and high score
+* Manages the firing of satellites
 
 ## UI
 ### BP_StartMenu
@@ -151,3 +149,8 @@ This UI mostly uses UMG bindings that in-turn call SkookumScript code to perform
 
 # Attributions
 * Erbos Draco Monospaced NBP font — Created in 2012 by total FontGeek DTF, Ltd
+
+Music by Eric Matyas
+“Automation”
+"Mech Monsters Closing In"
+www.soundimage.org

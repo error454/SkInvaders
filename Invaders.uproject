@@ -1,6 +1,6 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "4.18",
+	"EngineAssociation": "{0707D5EC-47F7-35F8-E54A-B4884B2A0D95}",
 	"Category": "",
 	"Description": "",
 	"Plugins": [
@@ -8,113 +8,6 @@
 			"Name": "SkookumScript",
 			"Enabled": true,
 			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/38694f554c2c4b9f84c585256d509481"
-		},
-		{
-			"Name": "OculusVR",
-			"Enabled": false
-		},
-		{
-			"Name": "SteamVR",
-			"Enabled": false
-		},
-		{
-			"Name": "ProceduralMeshComponent",
-			"Enabled": false
-		},
-		{
-			"Name": "MediaCompositing",
-			"Enabled": false
-		},
-		{
-			"Name": "LightPropagationVolume",
-			"Enabled": false
-		},
-		{
-			"Name": "CustomMeshComponent",
-			"Enabled": false
-		},
-		{
-			"Name": "CableComponent",
-			"Enabled": false
-		},
-		{
-			"Name": "PhysXVehicles",
-			"Enabled": false
-		},
-		{
-			"Name": "RuntimePhysXCooking",
-			"Enabled": false
-		},
-		{
-			"Name": "OnlineSubsystemGooglePlay",
-			"Enabled": false,
-			"SupportedTargetPlatforms": [
-				"Android"
-			]
-		},
-		{
-			"Name": "OnlineSubsystemIOS",
-			"Enabled": false,
-			"SupportedTargetPlatforms": [
-				"IOS",
-				"TVOS"
-			]
-		},
-		{
-			"Name": "GoogleCloudMessaging",
-			"Enabled": false
-		},
-		{
-			"Name": "AndroidMoviePlayer",
-			"Enabled": false
-		},
-		{
-			"Name": "AppleMoviePlayer",
-			"Enabled": false
-		},
-		{
-			"Name": "WindowsMoviePlayer",
-			"Enabled": false
-		},
-		{
-			"Name": "MobilePatchingUtils",
-			"Enabled": false
-		},
-		{
-			"Name": "HTML5Networking",
-			"Enabled": false
-		},
-		{
-			"Name": "MobileLauncherProfileWizard",
-			"Enabled": false
-		},
-		{
-			"Name": "TcpMessaging",
-			"Enabled": false
-		},
-		{
-			"Name": "UdpMessaging",
-			"Enabled": false
-		},
-		{
-			"Name": "AndroidMedia",
-			"Enabled": false
-		},
-		{
-			"Name": "AvfMedia",
-			"Enabled": false
-		},
-		{
-			"Name": "ImgMedia",
-			"Enabled": false
-		},
-		{
-			"Name": "WmfMedia",
-			"Enabled": false
-		},
-		{
-			"Name": "AlembicImporter",
-			"Enabled": false
 		}
 	]
 }

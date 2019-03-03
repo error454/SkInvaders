@@ -13,7 +13,7 @@
   [
     if @displayed_score ~= pc.@score>>
     [
-      @displayed_score := MathLib.finterp_to_constant(@displayed_score, pc.@score>>, GameLib.world_delta_seconds, @score_update_speed)
+      @displayed_score := MathLib.finterp_to(@displayed_score, pc.@score>>, GameLib.world_delta_seconds, @score_update_speed)
       result := @displayed_score>>
     ]
   ]

@@ -10,7 +10,6 @@ annotations: &reflected_data &name("BP_Invasion_C")
 $$ @
 
 /* &raw("UberGraphFrame")             PointerToUberGraphFrame !@uber_graph_frame              // Currently unsupported */
-&raw("Audio")                      AudioComponent    !@audio                         // Audio
 &raw("InvaderMovement")            InvaderMovement   !@invader_movement              // Invader Movement
 &raw("PatternSpawner")             PatternSpawner    !@pattern_spawner               // Pattern Spawner
 &raw("DefaultSceneRoot")           SceneComponent    !@default_scene_root            // Default Scene Root
@@ -27,5 +26,6 @@ $$ @
 &raw("SpawnZDistance")             Real              !@spawn_zdistance               // Spawn ZDistance
 &raw("InvasionCountMaxDifficulty") Integer           !@invasion_count_max_difficulty // Invasion Count Max Difficulty
 &raw("InvasionDifficultyMult")     Real              !@invasion_difficulty_mult      // Invasion Difficulty Mult
+&raw("SpawnScale")                 Real              !@spawn_scale                   // Spawn Scale
 
 $$ .

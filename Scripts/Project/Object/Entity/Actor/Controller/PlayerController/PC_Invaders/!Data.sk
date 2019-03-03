@@ -15,3 +15,7 @@ Boolean !@game_is_over
 
 // To grab coordinates
 BP_WorldSetup !@world_setup
+
+// To track a coroutine that is firing satellites, seemed like a good place to do this based on
+// lifecycle of the controller.
+InvokedCoroutine !@satelite_co

@@ -1,15 +1,15 @@
 ()
 [
-  !dest : actor_location
-  actor_location_set(@fly_in_location)
+  animation_set(E_BotAnimState.@@ball)
+  actor_location_set(@fly_in_start)
   actor_hidden_in_game_set(false)
   
   // fly to the current location from the specified location
   loop
   [
-    !new : MathLib.vinterp_to_constant(actor_location, dest, GameLib.world_delta_seconds, 400)
+    !new : MathLib.vinterp_to(actor_location, @fly_in_destination, GameLib.world_delta_seconds, 8)
     actor_location_set(new)
-    [exit] when new.equal?(dest)
+    [exit] when MathLib.equal_equal_vector_vector(new, @fly_in_destination, 0.1)
     _wait
   ]
   @start_location_reached? := true

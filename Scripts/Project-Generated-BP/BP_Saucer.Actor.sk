@@ -10,15 +10,14 @@ annotations: &reflected_data &name("BP_Saucer_C")
 $$ @
 
 /* &raw("UberGraphFrame")  PointerToUberGraphFrame !@uber_graph_frame // Currently unsupported */
-&raw("Audio")           AudioComponent      !@audio            // Audio
+&raw("SK_saucer")       SkeletalMeshComponent !@sk_saucer        // SK Saucer
+&raw("Audio")           AudioComponent        !@audio            // Audio
 /* &raw("SkookumScriptClassData")SkookumScriptClassDataComponent !@skookum_script_class_data // Currently unsupported */
-&raw("Sphere")          StaticMeshComponent !@sphere           // Sphere
-&raw("Scene")           SceneComponent      !@scene            // Scene
-&raw("InvaderMovement") InvaderMovement     !@invader_movement // Invader Movement
-&raw("Saucer")          StaticMeshComponent !@saucer           // Saucer
-&raw("HealthComponent") HealthComponent     !@health_component // Health Component
-&raw("BounceFrequency") Real                !@bounce_frequency // In Hz
-&raw("BounceMagnitude") Real                !@bounce_magnitude // Bounce Magnitude
-&raw("DropList")        List{EntityClass}   !@drop_list        // Things that the saucer can drop
+&raw("Scene")           SceneComponent        !@scene            // Scene
+&raw("InvaderMovement") InvaderMovement       !@invader_movement // Invader Movement
+&raw("HealthComponent") HealthComponent       !@health_component // Health Component
+&raw("BounceFrequency") Real                  !@bounce_frequency // In Hz
+&raw("BounceMagnitude") Real                  !@bounce_magnitude // Bounce Magnitude
+&raw("DropList")        List{EntityClass}     !@drop_list        // Things that the saucer can drop
 
 $$ .

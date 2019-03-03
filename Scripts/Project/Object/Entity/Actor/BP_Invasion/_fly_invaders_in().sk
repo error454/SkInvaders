@@ -7,14 +7,26 @@
   !w1 : @world_setup.@game_coord_tr + [-Vector3!forward * @spawn_zdistance]
   !w2 : @world_setup.@game_coord_br + [-Vector3!forward * @spawn_zdistance]
   
-  // Fly all of the invaders into the play area
+  // Calculate starting location for all invaders to fly to the play area
   @spawned_actors.do_idx
   [
     // Pick random coordinates based on index so we split invaders between left/right
     !p1 : if idx.even?[v1] else[w1]
     !p2 : if idx.even?[v2] else[w2]
-    item<>BP_Invader.fly_in_location_set(@@random.vector3_between(p1, p2))
-    branch item<>BP_Invader._enter_from_location
+    !invader : item<>BP_Invader
+    
+    // Set the invader to his initial fly in location
+    invader.fly_from_to_set(@@random.vector3_between(p1, p2), invader.actor_location)
+    invader.actor_location_set(invader.@fly_in_start)
+  ]
+  
+  @spawned_actors._do
+  [
+    if item.valid?
+    [ 
+      branch item<>BP_Invader._enter_from_location
+      _wait(@@random.uniform_range(0.01, 0.01))
+    ]
   ]
   
   // You might be thinking "hey, why didn't he just do this"
@@ -47,5 +59,21 @@
     // See if they've all arrived
     [exit] when @spawned_actors<>List{BP_Invader}.all?[item.@start_location_reached?]
     _wait(0.1) 
-  ]  
+  ]
+
+  // Start all invaders hovering
+  BP_Invader.instances.do_idx
+  [
+    // calculate unique phi for each so that wave is offset
+    branch item._hover(idx>>)
+  ]
+   
+  // Animate all invaders opening 
+  BP_Invader.instances.do
+  [
+    item.animation_set(E_BotAnimState.@@spin)
+  ]
+  
+  _wait(1.5)
+   
 ]

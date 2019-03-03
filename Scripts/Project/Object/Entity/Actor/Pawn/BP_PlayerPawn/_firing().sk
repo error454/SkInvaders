@@ -11,8 +11,5 @@
     // fired? which tells us whether our call to _fire resulted in any bullets fired.
     @gun_component._fire(;!fired?)
     
-    // If we didn't fire then we need to wait 1 frame to avoid potential infinite 
-    // loops where the fire button is being held but we're unable to fire.
-    _wait when fired?.not
   ]
 ]

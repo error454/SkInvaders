@@ -8,7 +8,7 @@
     if furthest_actor.null?
     [
       // Find the actor that is furthest left or right
-      furthest_actor := Actor.furthest_in_dir(@spawned_actors, dir)   
+      furthest_actor : Actor.furthest_in_dir(@spawned_actors, dir)   
     ]
     [_wait exit] when furthest_actor.null?
     

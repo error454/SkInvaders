@@ -9,4 +9,5 @@
     @invader_movement._move_down
     _wait
   ]
+  destroy_sk_actor
 ]

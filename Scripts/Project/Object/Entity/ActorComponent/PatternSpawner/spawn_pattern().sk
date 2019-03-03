@@ -46,7 +46,7 @@
           Vector3!scalar(spawn_scale))
 
         !a : GameLib.begin_spawning_actor_from_class(,class, t)
-        a := GameLib.finish_spawning_actor(a t)
+        a : GameLib.finish_spawning_actor(a t)
         spawned_actors.append(a)
         
         if owner.valid?

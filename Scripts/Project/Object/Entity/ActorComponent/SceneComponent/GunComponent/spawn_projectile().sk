@@ -2,8 +2,8 @@
 [
   // Spawn the projectile
   !t : Transform!translation_rotation_scale(component_location, dir.RotationAngles.Rotation, Vector3!one)
-  !p : GameLib.begin_spawning_actor_from_class(, @gun_params.@projectile_class_3_42d5, t, owner: owner)
-  p := GameLib.finish_spawning_actor(p t)
+  !p : GameLib.begin_deferred_actor_spawn_from_class(, @gun_params.@projectile_class_3_42d5, t, ESpawnActorCollisionHandlingMethod.@@always_spawn, owner)
+  p : GameLib.finish_spawning_actor(p t)
   
   // Set the instigator on the projectile when fired from a pawn, this tells us who the instigator is
   // on death of the projectile so we can do scoring.

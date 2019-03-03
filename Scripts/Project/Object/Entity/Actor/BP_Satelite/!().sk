@@ -1,0 +1,4 @@
+()
+[
+  @firing_sound : AudioComponent!null
+]

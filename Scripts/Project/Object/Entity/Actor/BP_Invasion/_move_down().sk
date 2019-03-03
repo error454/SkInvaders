@@ -6,7 +6,7 @@
 
   if furthest_actor.null?
   [
-    furthest_actor := Actor.furthest_in_dir(@spawned_actors, dir)      
+    furthest_actor : Actor.furthest_in_dir(@spawned_actors, dir)      
   ]
 
   // If we found the furthest actor then move down one unit

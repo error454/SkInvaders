@@ -1,5 +1,7 @@
 (PC_Invaders pc)
-[ 
+[
+  // Start main music
+  pc.@game_music.fade_in(3.0)
   loop
   [
     // TODO Bug work-around, should be able to just do _wait_game_over(;!lose_reason)
@@ -16,4 +18,5 @@
     _handle_win_lose(pc, lose_reason, won?; !game_over?)
     [exit] when game_over?
   ]
+  pc.@game_music.fade_out(1.0)
 ]

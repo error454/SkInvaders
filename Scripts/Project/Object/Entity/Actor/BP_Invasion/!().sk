@@ -8,5 +8,6 @@
   @invader_count : 0
   @pause_invasion? : false
   @moving_right? : true
-  @difficulty_mult : 0
+  @difficulty_mult : 1
+
 ]

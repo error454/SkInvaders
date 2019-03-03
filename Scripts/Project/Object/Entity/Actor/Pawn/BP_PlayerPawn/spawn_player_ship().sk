@@ -1,5 +1,6 @@
 ()
 [
+ /*
   @instanced_static_mesh.clear_instances
 
   @pattern_spawner.spawn_pattern_instanced(
@@ -9,4 +10,5 @@
     Vector3!
     3
     0.14)
+    */
 ]

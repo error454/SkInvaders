@@ -6,5 +6,6 @@
   @high_score : 5000
   @game_is_over : false
   @world_setup : BP_WorldSetup.instances_first
+  @satelite_co : branch[_wait(-1)]
   Debug.assert(@world_setup.valid? "BP_WorldSetup did not exist in level")
 ]
