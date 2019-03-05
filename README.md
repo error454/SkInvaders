@@ -1,4 +1,4 @@
-This is a Space Invaders clone made using [SkookumScript](http://www.skookumscript.com/) and Unreal Engine 4. The goal of this project is to provide a fully working sample project that illustrates how to write a basic game in UE4 using the SkookumScript programming language.
+This is a Space Invaders clone made using [SkookumScript](http://www.skookumscript.com/) and Unreal Engine 4. The goal of this project is to provide a fully working sample project that illustrates how to write a basic game in UE4 using the SkookumScript programming language. The game is also available as a [stand-alone download on our itch page](https://hyperdrive.itch.io/skookum-invaders).
 
 [![Animated Game Preview](https://raw.githubusercontent.com/error454/SkInvaders/master/Doc/vimeo.jpg)](https://vimeo.com/320640930 "Skookum Invaders - Click to Watch!")
 
