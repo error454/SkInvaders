@@ -1,8 +1,8 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "{0707D5EC-47F7-35F8-E54A-B4884B2A0D95}",
-	"Category": "",
-	"Description": "",
+	"EngineAssociation": "4.22",
+	"Category": "Examples",
+	"Description": "An example project for the SkoookumScript language",
 	"Plugins": [
 		{
 			"Name": "SkookumScript",
