@@ -1,9 +1,0 @@
-&blueprint
-()
-[
-  !pc : PC_Invaders.instances_first
-  if pc.valid?
-  [
-    pc.@game_is_over := true
-  ]
-]
