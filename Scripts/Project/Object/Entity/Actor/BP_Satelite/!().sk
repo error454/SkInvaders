@@ -1,4 +1,6 @@
 ()
 [
-  @firing_sound : AudioComponent!null
+  @firing_cue : AudioComponent!null
+  @target_cue : AudioComponent!null
+  @idle_cue : AudioComponent!null
 ]
