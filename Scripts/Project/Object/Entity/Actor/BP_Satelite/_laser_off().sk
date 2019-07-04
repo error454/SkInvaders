@@ -1,8 +1,7 @@
 ()
 [
-  @firing_sound.stop when @firing_sound.valid?
+  stop_all
   
   enable_overlaps(false)
   GameLib.spawn_sound_at_location(,@laser_end_cue, actor_location)
-  @laser.active_set(false)
 ]

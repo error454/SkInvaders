@@ -76,3 +76,6 @@ DerivedDataCache/*
 
 # Ignore SkookumScript compiled binaries
 Content/SkookumScript/*
+
+# Ignore Houdini stuff
+Content/HoudiniEngine/**
