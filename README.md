@@ -5,8 +5,8 @@ This is a Space Invaders clone made using [SkookumScript](http://www.skookumscri
 If you would like to discuss aspects of the project feel free to reach out in the [official announcement thread](http://forum.skookumscript.com/t/skookum-invaders/1587?u=error454). If you'd like to report a bug you can use the github Issue Tracker.
 
 # Requirements
-* UE4 4.21
-* SkookumScript Plugin [from github](https://github.com/AgogLabs/SkookumScript-UnrealEngine)
+* UE4 4.22
+* SkookumScript Plugin [from github](https://github.com/SkookumScript/SkookumScript-Plugin)
 
 # Architecture
 ![Component Overview](https://raw.githubusercontent.com/error454/SkInvaders/master/Doc/class%20chart.png)
