@@ -23,4 +23,13 @@ $$ @
 &raw("AnimGraphNode_StateMachine_CACED3F34A90F7E974DF4C9375C41834")          AnimNode_StateMachine                 !@anim_graph_node_state_machine_cace            // Anim Graph Node State Machine CACED3F34A90F7E974DF4C9375C41834
 &raw("AnimState")                                                            E_BotAnimState                        !@anim_state                                    // Anim State
 
+$$ @anim_graph
+// Anim Graph
+//
+// UE4 name of this method: AnimGraph
+
+&aka("AnimGraph")
+
+(PoseLink anim_graph : PoseLink!) 
+
 $$ .
